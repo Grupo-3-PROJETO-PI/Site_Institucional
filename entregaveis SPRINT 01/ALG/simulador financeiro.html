@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>SmartMarket - Simulador Financeiro</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="container-title">
+                <div class="title-logo">
+                    <h1>
+                        Flow <span class="color-logo">Track</span>
+                    </h1>
+                </div>
+                <div class="title-text">
+                    <h1>Simulador Financeiro - SmartMarket</h1>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content-left">
+                    <div class="content-title">
+                        <h1>Sem sistema:</h1>
+                    </div>
+                    <div class="content-ipt">
+
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="content-title">
+                        <h1>Com sistema</h1>
+                    </div>
+                    <div class="content-ipt">
+                        <div class="ipt-row">
+                            <label for="clientes_id">
+                                <b>Clientes por Dia:</b>
+                            </label>
+                            <input type="number" id="clientes_id">
+                        </div>
+                        <div class="ipt-row">
+                            <label for="ticket_id">
+                                <b>Gasto médio por cliente (R$):</b>
+                            </label>
+                            <input type="number" id="ticket_id">
+                        </div>
+                        <div class="ipt-row">
+                            <label for="dias_id">
+                                <b>Dias de Funcionamento por mês:</b>
+                            </label>
+                            <input type="number" id="dias_id">
+                        </div>
+                        <div class="ipt-row">
+                            <label for="taxa_id">
+                                <b>Taxa de Conversão Atual (%):</b>
+                            </label>
+                            <input type="number" id="taxa_id" value="70">
+                        </div>
+                        <div class="ipt-row-button">
+                            <button onclick="calcular()">Calcular</button>
+                        </div>
+                        <div class="ipt-row-resultado">
+                            <h1 id="resultado"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        let clientes = Number(clientes_id.value);
+        let ticket = Number(ticket_id.value);
+        let dias = Number(dias_id.value);
+        let conversaoAtual = Number(taxa_id.value);
+
+        // CUSTO DO SISTEMA
+        let sensores = 2; // entrada + saída
+        let arduinos = 1;
+        let jumpers = 10;
+
+        let custoSensores = sensores * 50;
+        let custoArduino = arduinos * 150;
+        let custoJumpers = jumpers * 2;
+
+        // mao de obra + aplicaçao + nosso lucro
+        let comissao = 5;
+
+        let custoSistema = (custoSensores + custoArduino + custoJumpers) * comissao;
+
+        // MELHORIA DO SISTEMA
+        let perdaAtual = 100 - conversaoAtual;
+        let eficiencia = 0.25;
+
+        let aumento = perdaAtual * eficiencia;
+        let novaConversao = conversaoAtual + aumento;
+
+        if (novaConversao > 100) {
+            novaConversao = 100;
+        }
+
+        // RECEITAS
+        let receitaMax = clientes * ticket * dias;
+
+        let receitaAtual = receitaMax * (conversaoAtual / 100);
+        let receitaNova = receitaMax * (novaConversao / 100);
+
+        let perdaMes = receitaMax - receitaAtual;
+
+        let ganho = receitaNova - receitaAtual;
+
+        let payback = 0;
+
+        if (ganho > 0) {
+            payback = custoSistema / ganho;
+        } else {
+            payback = 0;
+        }
+
+        let html = `
+    <h1 style="text-align:center;">Resultados da Simulação</h1>
+
+    <h2>Visão Geral:</h2>
+    <p>Clientes por dia: <b>${clientes}</b></p>
+    <p>Ticket médio: <b>R$${ticket.toFixed(2)}</b></p>
+    <p>Receita mensal atual: <b>R$${receitaAtual.toFixed(2)}</b></p>
+    <p>Investimento no sistema: <b>R$${custoSistema.toFixed(2)}</b></p>
+
+    <h2>Análise de Perdas:</h2>
+    <p>Perda mensal estimada: <span style="color:red;"><b>R$${perdaMes.toFixed(2)}</b></span></p>
+
+    <h2>Impacto do Sistema:</h2>
+    <p>Conversão atual: <b>${conversaoAtual}%</b></p>
+    <p>Nova conversão: <span style="color:green;"><b>${novaConversao.toFixed(2)}%</b></span></p>
+
+    <p>Nova receita mensal: <b>R$${receitaNova.toFixed(2)}</b></p>
+    <p>Ganho mensal: <span style="color:green;"><b>R$${ganho.toFixed(2)}</b></span></p>
+
+    <p>Payback: <b>${payback.toFixed(2)} meses</b></p>
+    `;
+
+        resultados.innerHTML = html;
+    }
+
+</script>
