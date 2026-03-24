@@ -27,7 +27,38 @@
                         <h1>Sem sistema:</h1>
                     </div>
                     <div class="content-ipt">
+                        <div class="content-ipt">
+                            <div class="ipt-row">
+                                <label for="ipt_clientes">
+                                    <b>Clientes por Dia:</b>
+                                </label>
+                                <input type="number" id="ipt_clientes">
+                            </div>
+                            <div class="ipt-row">
+                                <label for="ipt_ticket">
+                                    <b>Gasto médio por cliente (R$):</b>
+                                </label>
+                                <input type="number" id="ipt_ticket">
+                            </div>
+                            <div class="ipt-row">
+                                <label for="ipt_dias">
+                                    <b>Dias de Funcionamento por mês:</b>
+                                </label>
+                                <input type="number" id="ipt_dias">
+                            </div>
+                            <div class="ipt-row">
+                                <label for="ipt_taxa">
+                                    <b>Taxa de Conversão Atual (%):</b>
+                                </label>
+                                <input type="number" id="ipt_taxa" value="70">
+                            </div>
+                            <div class="ipt-row-button">
+                                <button onclick="calcular()">Calcular</button>
+                            </div>
+                            <div class="ipt-row-resultado" id="resultados">
 
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="content-right">
@@ -36,34 +67,34 @@
                     </div>
                     <div class="content-ipt">
                         <div class="ipt-row">
-                            <label for="clientes_id">
+                            <label for="ipt_clientes">
                                 <b>Clientes por Dia:</b>
                             </label>
-                            <input type="number" id="clientes_id">
+                            <input type="number" id="ipt_clientes">
                         </div>
                         <div class="ipt-row">
-                            <label for="ticket_id">
+                            <label for="ipt_ticket">
                                 <b>Gasto médio por cliente (R$):</b>
                             </label>
-                            <input type="number" id="ticket_id">
+                            <input type="number" id="ipt_ticket">
                         </div>
                         <div class="ipt-row">
-                            <label for="dias_id">
+                            <label for="ipt_dias">
                                 <b>Dias de Funcionamento por mês:</b>
                             </label>
-                            <input type="number" id="dias_id">
+                            <input type="number" id="ipt_dias">
                         </div>
                         <div class="ipt-row">
-                            <label for="taxa_id">
+                            <label for="ipt_taxa">
                                 <b>Taxa de Conversão Atual (%):</b>
                             </label>
-                            <input type="number" id="taxa_id" value="70">
+                            <input type="number" id="ipt_taxa" value="70">
                         </div>
                         <div class="ipt-row-button">
                             <button onclick="calcular()">Calcular</button>
                         </div>
-                        <div class="ipt-row-resultado">
-                            <h1 id="resultado"></h1>
+                        <div class="ipt-row-resultado" id="resultados">
+
                         </div>
                     </div>
                 </div>
@@ -78,10 +109,10 @@
 <script>
     function calcular() {
 
-        let clientes = Number(clientes_id.value);
-        let ticket = Number(ticket_id.value);
-        let dias = Number(dias_id.value);
-        let conversaoAtual = Number(taxa_id.value);
+        let clientes = Number(ipt_clientes.value);
+        let ticket = Number(ipt_ticket.value);
+        let dias = Number(ipt_dias.value);
+        let conversaoAtual = Number(ipt_taxa.value);
 
         // CUSTO DO SISTEMA
         let sensores = 2; // entrada + saída
@@ -127,26 +158,54 @@
         }
 
         let html = `
-    <h1 style="text-align:center;">Resultados da Simulação</h1>
+            <div class="res-title">
+                <h1 style="text-align:center;">Resultados da Simulação</h1>
+            </div>
+                <div class="res-content">
+                    <div class="res-left">
+                        <h2>Visão Geral:</h2>
+                            <p>
+                                Clientes por dia:
+                                <b>${clientes}</b><br>
+                                Ticket médio:
+                                <b>R$${ticket.toFixed(2)}</b><br>
+                                Receita mensal atual:
+                                <b>R$${receitaAtual.toFixed(2)}</b><br>
+                                Investimento no sistema:
+                                <b>R$${custoSistema.toFixed(2)}</b>
+                            </p>
+                        <h2>Análise de Perdas:</h2>
+                            <p>Perda mensal estimada:
+                                <span style="color:red;">
+                                    <b>R$${perdaMes.toFixed(2)}</b>
+                                </span>
+                            </p>
+                    </div>
+                    <div class="res-right">
+                        <h2>Impacto do Sistema:</h2>
+                            <p>Conversão atual:
+                                <b>${conversaoAtual}%</b><br>
 
-    <h2>Visão Geral:</h2>
-    <p>Clientes por dia: <b>${clientes}</b></p>
-    <p>Ticket médio: <b>R$${ticket.toFixed(2)}</b></p>
-    <p>Receita mensal atual: <b>R$${receitaAtual.toFixed(2)}</b></p>
-    <p>Investimento no sistema: <b>R$${custoSistema.toFixed(2)}</b></p>
+                                Nova conversão:
+                                    <span style="color:green;">
+                                        <b>${novaConversao.toFixed(2)}%</b><br>
+                                    </span>
 
-    <h2>Análise de Perdas:</h2>
-    <p>Perda mensal estimada: <span style="color:red;"><b>R$${perdaMes.toFixed(2)}</b></span></p>
+                                Nova receita mensal:
+                                    <b>R$${receitaNova.toFixed(2)}</b><br>
 
-    <h2>Impacto do Sistema:</h2>
-    <p>Conversão atual: <b>${conversaoAtual}%</b></p>
-    <p>Nova conversão: <span style="color:green;"><b>${novaConversao.toFixed(2)}%</b></span></p>
+                                Ganho mensal:
+                                    <span style="color:green;">
+                                        <b>R$${ganho.toFixed(2)}</b><br>
+                                    </span>
 
-    <p>Nova receita mensal: <b>R$${receitaNova.toFixed(2)}</b></p>
-    <p>Ganho mensal: <span style="color:green;"><b>R$${ganho.toFixed(2)}</b></span></p>
+                                Payback:
+                                    <b>${payback.toFixed(2)} meses</b>
 
-    <p>Payback: <b>${payback.toFixed(2)} meses</b></p>
-    `;
+                            </p>
+                    </div>
+                </div>
+        `;
 
         resultados.innerHTML = html;
     }
