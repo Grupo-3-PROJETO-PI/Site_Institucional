@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMarket - Simulador Financeiro</title>
+
+    <link rel="stylesheet" href="teste.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Part d cima -->
+    <div class="container-title">
+        <div class="title-logo">
+            <h1>Flow <span class="color-logo">Track</span></h1>
+        </div>
+        <div class="title-text">
+            <h1>Simulador Financeiro - SmartMarket</h1>
+        </div>
+    </div>
+
+    
+    <div class="content">
+
+        <!-- SEM SISTEMA -->
+        <div class="content-left">
+
+            <div class="content-title">
+                <h1>Sem sistema</h1>
+            </div>
+
+            <div class="ipt-row-resultado" id="resultadoSem">
+                <p>Resultado aparecerá aqui</p>
+            </div>
+
+        </div>
+
+        <!-- input no meio -->
+        <div class="content-center">
+
+            <div class="content-title">
+                <h1>Simulação</h1>
+            </div>
+
+            <div class="content-ipt">
+
+
+                <!-- 500 a 1.500 clientes diariamente. -->
+                <div class="ipt-row">
+                    <label><b>Clientes por Dia:</b></label>
+                    <input type="number" id="ipt_clientes">
+                </div>
+
+                <div class="ipt-row">
+                    <label><b>Gasto médio por cliente (R$):</b></label>
+                    <input type="number" id="ipt_ticket">
+                </div>
+
+                <div class="ipt-row">
+                    <label><b>Dias por mês:</b></label>
+                    <input type="number" id="ipt_dias">
+                </div>
+
+                <div class="ipt-row">
+                    <label><b>Conversão (%):</b></label>
+                    <input type="number" id="ipt_taxa" value="70">
+                </div>
+
+                <div class="ipt-row-button">
+                    <button onclick="calcular()">Calcular</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--COM SISTEMA -->
+        <div class="content-right">
+
+            <div class="content-title">
+                <h1>Com sistema</h1>
+            </div>
+
+            <div class="ipt-row-resultado" id="resultadoCom">
+                <p>Resultado aparecerá aqui</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function calcular() {
+
+    let clientes = Number(ipt_clientes.value);
+    let ticket = Number(ipt_ticket.value);
+    let dias = Number(ipt_dias.value);
+    let conversaoAtual = Number(ipt_taxa.value);
+
+    // CUSTO DO SISTEMA
+    let sensores = 2;
+    let arduinos = 1;
+    let jumpers = 10;
+
+    let comissao = 10;
+     
+    let custoSistema = (sensores * 50 + arduinos * 150 + jumpers * 2) * comissao
+   
+
+    // MELHORIA
+    let novaConversao = conversaoAtual + ((100 - conversaoAtual) * 0.25);
+    if (novaConversao > 100) novaConversao = 100;
+
+    // RECEITAS
+    let receitaMax = clientes * ticket * dias;
+    let receitaAtual = receitaMax * (conversaoAtual / 100);
+    let receitaNova = receitaMax * (novaConversao / 100);
+
+    // PERDAS E GANHOS
+    let perdaMes = receitaMax - receitaAtual;
+    let perdaAno = perdaMes * 12;
+
+    let ganho = receitaNova - receitaAtual;
+    let ganhoAno = ganho * 12;
+
+    let payback = ganho > 0 ? custoSistema / ganho : 0;
+
+    // SEM SISTEMA
+    resultadoSem.innerHTML = `
+        <div class="res-title">
+            <h1>Sem Sistema</h1> <br> <br> <br>
+        </div>
+
+        <div class="res-content">
+            <div class="res-left">
+                <h2>Visão Geral</h2> <br>
+                <p>
+                    Conversão: <b>${conversaoAtual.toFixed(2)}%</b><br><br>
+                    Clientes: <b>${clientes}</b><br><br>
+                    Ticket: <b>R$${ticket.toFixed(2)}</b><br><br>
+                    Receita: <b>R$${receitaAtual.toFixed(2)}</b>
+                </p>
+            </div>
+
+            <div class="res-right">
+                <h2>Perdas</h2> <br>
+                
+                    Mensal:<br>
+                    
+                     <span style="color:red;">
+                        <b>R$${perdaMes.toFixed(2)}</b><br><br>
+                    </span><br>
+
+                    Anual:<br>
+                    <span style="color:red;">
+                        <b>R$${perdaAno.toFixed(2)}</b><br><br>
+                    </span>
+                    Investimento total:<br>
+                   <b> ${custoSistema.toFixed(2)} </b>
+                
+
+                </p>
+            </div>
+        </div>
+    `;
+
+    // COM SISTEMA
+    resultadoCom.innerHTML = `
+        <div class="res-title">
+            <h1>Com Sistema</h1> <br> <br> <br>
+        </div>
+
+        <div class="res-content">
+            <div class="res-left">
+                <h2>Impacto</h2> <br>
+                <p>
+                    Nova conversão:<br>
+                    <b>${novaConversao.toFixed(2)}%</b><br><br>
+
+                    Nova receita:<br>
+                    <b>R$${receitaNova.toFixed(2)}</b>
+                </p>
+            </div>
+
+            <div class="res-right">
+                <h2>Retorno</h2> <br>
+                <p>
+                    Mensal:<br>
+                    <span style="color:green;">
+                        <b>R$${ganho.toFixed(2)}</b>
+                    </span><br><br>
+
+                    Anual:<br>
+                    <span style="color:green;">
+                        <b>R$${ganhoAno.toFixed(2)}</b>
+                    </span><br><br>
+
+                    Payback:<br>
+                    <b>${payback.toFixed(2)} meses</b>
+                </p>
+            </div>
+        </div>
+    `;
+}
+</script>
+</body>
+</html>
