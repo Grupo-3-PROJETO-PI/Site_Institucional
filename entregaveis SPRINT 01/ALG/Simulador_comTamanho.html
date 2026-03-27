@@ -276,6 +276,7 @@
             let sensores;
             let arduinos;
             let jumpers;
+            let comissao = 0;
 
             // DEFINIÇÃO REAL POR PORTE
             if (tamanho == 1) {
@@ -284,23 +285,26 @@
                 arduinos = 1;
                 jumpers = 15;
 
+                comissao = 20;
+
             } else if (tamanho == 2) {
                 //  Supermercado médio
                 sensores = 8;
                 arduinos = 2;
                 jumpers = 40;
 
+                comissao = 22;
+
             } else {
                 //  Hipermercado grande
                 sensores = 25;
                 arduinos = 5;
                 jumpers = 120;
+
+                comissao = 25;
             }
 
-            let comissao = 10;
-
-            let custoSistema = (sensores * 50 + arduinos * 150 + jumpers * 2) * comissao;
-
+            let custoSistema = (sensores * 55 + arduinos * 260 + jumpers * 2.5) * comissao;
 
             // MELHORIA
             let novaConversao = conversaoAtual + ((100 - conversaoAtual) * 0.25);
