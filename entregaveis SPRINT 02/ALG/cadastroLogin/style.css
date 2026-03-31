@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --cor01: rgba(140, 53, 3, 1);
+    --cor02: #D98927;
+    --cor03: #BF6A02;
+    --cor04: #26471B;
+    --cor05: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-cadastro{
+   width: 100%; 
+   height: 100vh;
+   background-image: url('./midia/img-fundo.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+
+}
