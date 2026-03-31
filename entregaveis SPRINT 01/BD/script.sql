@@ -6,10 +6,11 @@ CREATE TABLE empresa_parceira(
 );
 
 CREATE TABLE franquia(
-	id_franquia INT PRIMARY KEY AUTO_INCREMENT,
+	id_franquia INT, 
 	nome VARCHAR(45) NOT NULL,
 	endereco VARCHAR(45) NOT NULL,
 	fk_empresa INT,
+	CONSTRAINT chave_composta PRIMARY KEY (id_franquia, fk_empresa),
 	CONSTRAINT ctFkFranquiaEmpresa FOREIGN KEY (fk_empresa) REFERENCES empresa_parceira(id_empresa_parceira)
 );
 
