@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="./styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Site Institucional - Login</title>
 </head>
+
 <body>
-    
+    <div class="container-login">
+        <div class="container-cor">
+            <div class="navbar">
+                <ul>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-angle-left"></i> Home
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-login">
+                <div class="login">
+                    <form action="">
+                        <div class="login-title">
+                            <h1>Logar</h1>
+                            <p>Estamos felizes com sua volta!</p>
+                        </div>
+                        <div class="login-inputs">
+                            <div class="inputs-row gap-row">
+                                <label for="ipt_email_login">E-mail:</label>
+                                <input type="text" id="ipt_email_login" placeholder="Digite seu e-mail">
+                            </div>
+                            <div class="inputs-row">
+                                <label for="ipt_senha_login">Senha:</label>
+                                <input type="text" id="ipt_senha_login" placeholder="Digite sua senha">
+                            </div>
+                            <div class="inputs-links">
+                                <div class="links-check">
+                                    <label class="content-check">
+                                        <input id="botao-check" type="checkbox" name="opcao">
+                                        <span class="checkmark"></span>
+                                        <span class="text-check">Continuar Conectado</span>
+                                    </label>
+                                </div>
+                                <div class="links-senha">
+                                    <a href="./esqueci_a_senha.html">Esqueci a senha</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login-button">
+                            <div class="button-row">
+                                <button>Entrar</button>
+                                <p>
+                                    Não tem uma conta?
+                                    <span>
+                                        <a href="./cadastro.html">Cadastre-se</a>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="button-row">
+                                <p class="empresa">© 2026 FlowTrak</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
