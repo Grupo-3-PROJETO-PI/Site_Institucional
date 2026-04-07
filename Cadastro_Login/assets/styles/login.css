@@ -79,9 +79,9 @@
     justify-content: center;
     flex-direction: column;
     height: 70%;
-    width: 50%;
+    width: 53%;
     background-color: white;
-    border-radius: 7%;
+    border-radius: 50px;
 }
 
 .login form {
