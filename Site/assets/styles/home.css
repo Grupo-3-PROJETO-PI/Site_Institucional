@@ -177,7 +177,7 @@
 .title-home button:hover {
   color: #26471b;
   background-color: white;
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 10px white;
 }
 
 /*Section valores*/
@@ -218,22 +218,29 @@
 .content-valores{
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: 70%;
   height: 80%;
-  gap: 3.5vw;
+  gap: 4vw;
 }
 
 .box-valores{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   height: 80%;
-  width: 25%;
+  width: 35%;
   background-color: #ffffff13;
-  border: 1px solid var(--cor05);
-  border-radius: 30px;
+  border: 2px solid var(--cor05);
+  border-radius: 80px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.box-valores:hover{
+  transform: translateY(-50px);
+  box-shadow:  0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .box-icon{
