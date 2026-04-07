@@ -43,10 +43,12 @@
 .nav-logo h1 {
   font-size: 1.4rem;
   color: white;
+  font-family: "Raleway", sans-serif;
 }
 
 .nav-logo span {
   color: var(--cor02);
+  font-family: "Raleway", sans-serif;
 }
 
 .nav-links {
@@ -72,11 +74,19 @@
   font-weight: 600;
 }
 
-.nav-links ul li:hover{
+.nav-links ul li a{
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links ul li a:hover{
   color: var(--cor03);
 }
 
-.select{
+.select a{
   color: var(--cor03) !important;
   font-weight: 600;
 }
