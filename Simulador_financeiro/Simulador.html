@@ -1,494 +1,373 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>©2026 FlowTrak - Simulador Financeiro</title>
-    <link rel="icon" type="png" href="./assets/midia/logo.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./assets/styles/styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="navbar">
-        <div class="nav-logo">
-          <h1>Flow <span>Trak</span></h1>
-          <img src="./assets/midia/logo.png" alt="" />
-        </div>
-        <div class="nav-links">
-          <ul>
-            <li>
-              <a href="../Site/home.html">Home</a>
-            </li>
-            <li>
-              <a href="../Site/sobre_nos.html">Sobre Nós</a>
-            </li>
-            <li class="select">
-              <a href="./Simulador.html">Simulador</a>
-            </li>
-            <li>
-              <a href="../Site/contato.html">Contato</a>
-            </li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>©2026 FlowTrak - Simulador Financeiro</title>
+  <link rel="icon" type="png" href="./assets/midia/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/styles/styles.css" />
+</head>
 
-          </ul>
-        </div>
-        <div class="nav-login">
-          <i class="fa-solid fa-circle-user"></i>
-          <button onclick="redirecionamento_login()">Entrar</button>
-        </div>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="nav-logo">
+        <h1>Flow <span>Trak</span></h1>
+        <img src="./assets/midia/logo.png" alt="" />
       </div>
-    </header>
+      <div class="nav-links">
+        <ul>
+          <li>
+            <a href="../Site/home.html">Home</a>
+          </li>
+          <li>
+            <a href="../Site/sobre_nos.html">Sobre Nós</a>
+          </li>
+          <li class="select">
+            <a href="./Simulador.html">Simulador</a>
+          </li>
+          <li>
+            <a href="../Site/contato.html">Contato</a>
+          </li>
 
-    <main>
-      <div class="container">
-        <div class="content">
-          <!-- input no meio -->
-          <div class="content-simulador">
-            <div class="content-title-info">
-              <i class="fa-solid fa-circle-info"></i>
-              <div class="info-simulador">
-                <div class="info-main">
-                  <div class="info-title">
-                    <h1>Informações:</h1>
-                  </div>
-                  <div class="info-conteudo">
-                    <div class="info-conteudo-left">
-                      <div class="info-row">
-                        <h6>Tamanho do Supermercado:</h6>
-                        <p>
-                          Define o tamanho do mercado, mostrando exemplos de
-                          médias reais.
-                        </p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Clientes por Dia:</h6>
-                        <p>
-                          A quantidade de clientes que frequentam sua loja
-                          diariamente.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="info-conteudo-divisao"></div>
-                    <div class="info-conteudo-right">
-                      <div class="info-row">
-                        <h6>Gasto médio por cliente (R$):</h6>
-                        <p>Média gasto por cliente.</p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Dias por mês:</h6>
-                        <p>Quantos dias você abre sua loja no mês.</p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Conversão (%):</h6>
-                        <p>
-                          Conversão é a porcentagem de pessoas que entram no
-                          mercado e realmente compram.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="content-title">
-              <div class="content-title-text">
-                <h1>Simulação</h1>
-              </div>
-            </div>
+        </ul>
+      </div>
+      <div class="nav-login">
+        <i class="fa-solid fa-circle-user"></i>
+        <button onclick="redirecionamento_login()">Entrar</button>
+      </div>
+    </div>
+  </header>
 
-            <div class="content-ipt">
-              <div class="ipt-row">
-                <label><b>Tamanho do Supermercado:</b></label>
-                <select id="ipt_tamanho">
-                  <option value="default">Selecione:</option>
-                  <option value="1">Mercado (até 300m²)</option>
-                  <option value="2">Supermercado (300m² - 5000m²)</option>
-                  <option value="3">Hipermercado (+5000m²)</option>
-                </select>
-              </div>
-              <!-- 500 a 1.500 clientes diariamente. -->
-              <div class="ipt-row">
-                <label><b>Clientes por Dia:</b></label>
-                <input type="number" id="ipt_clientes" placeholder="Exp: 20" />
-              </div>
-
-              <div class="ipt-row">
-                <label><b>Gasto médio por cliente (R$):</b></label>
-                <input
-                  type="number"
-                  id="ipt_ticket"
-                  placeholder="Exp: 150.00"
-                />
-              </div>
-
-              <div class="ipt-row">
-                <label><b>Dias por mês:</b></label>
-                <input type="number" id="ipt_dias" placeholder="Exp: 28" />
-              </div>
-
-              <div class="ipt-row">
-                <label><b>Conversão (%):</b></label>
-                <input type="number" id="ipt_taxa" value="70" />
-              </div>
-
-              <div class="ipt-row-button">
-                <button onclick="calcular()">Calcular</button>
-              </div>
+  <main>
+    <div class="container">
+      <div class="content">
+        <!-- input no meio -->
+        <div class="content-simulador">
+          <div class="content-title">
+            <div class="content-title-text">
+              <h1>Simulação</h1>
             </div>
           </div>
 
-          <!-- SEM SISTEMA -->
-          <div class="content-resultado">
-            <div class="content-left">
-              <div class="content-info-left">
-                <i class="fa-solid fa-circle-info"></i>
-              </div>
-              <div class="info-res-left">
-                <div class="info-main">
-                  <div class="info-title-l">
-                    <h1>Informações:</h1>
-                  </div>
-                  <div class="info-conteudo">
-                    <div class="info-conteudo-left">
-                      <div class="info-row">
-                        <h6>Receita:</h6>
-                        <p>
-                          Valor total faturado com base nos clientes, ticket
-                          médio e taxa de conversão atual. Representa quanto o
-                          mercado ganha nas condições atuais.
-                        </p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Investimento Total:</h6>
-                        <p>
-                          Valor estimado para implementação do sistema completo,
-                          incluindo sensores, arduinos e infraestrutura
-                          necessária.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="info-conteudo-divisao"></div>
-                    <div class="info-conteudo-right">
-                      <div class="info-row">
-                        <h6>Perdas mensais:</h6>
-                        <p>
-                          Valor que o mercado deixa de ganhar mensalmente devido
-                          à baixa conversão de clientes, ou seja, oportunidades
-                          de venda perdidas.
-                        </p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Perdas anuais:</h6>
-                        <p>
-                          Projeção das perdas ao longo de um ano, considerando o
-                          desempenho atual sem melhorias no sistema.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="content-title-r">
-                <h1>Sem sistema</h1>
-              </div>
-
-              <div class="ipt-row-resultado" id="resultadoSem"></div>
+          <div class="content-ipt">
+            <div class="ipt-row">
+              <label title="Porte do seu supermercado em Metros."><b>Tamanho do Supermercado:</b></label>
+              <select id="ipt_tamanho">
+                <option value="default">Selecione:</option>
+                <option value="1">Mercado (até 300m²)</option>
+                <option value="2">Supermercado (300m² - 5000m²)</option>
+                <option value="3">Hipermercado (+5000m²)</option>
+              </select>
+            </div>
+            <!-- 500 a 1.500 clientes diariamente. -->
+            <div class="ipt-row">
+              <label title="Clientes que frequentam seu mercado por dia."><b>Clientes por Dia:</b></label>
+              <input type="number" id="ipt_clientes" placeholder="Exp: 20" />
             </div>
 
-            <!--COM SISTEMA -->
-            <div class="content-right">
-              <div class="content-info-right">
-                <i class="fa-solid fa-circle-info"></i>
-              </div>
-              <div class="info-res-right">
-                <div class="info-main">
-                  <div class="info-title-r">
-                    <h1>Informações:</h1>
-                  </div>
-                  <div class="info-conteudo">
-                    <div class="info-conteudo-left">
-                      <div class="info-row">
-                        <h6>Nova conversão::</h6>
-                        <p>
-                          Nova taxa de conversão estimada após a implementação
-                          do sistema, representando a melhoria na quantidade de
-                          clientes que realizam compras.
-                        </p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Nova receita:</h6>
-                        <p>
-                          Valor estimado de faturamento com a nova taxa de
-                          conversão, mostrando o impacto direto do sistema nas
-                          vendas.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="info-conteudo-divisao"></div>
-                    <div class="info-conteudo-right">
-                      <div class="info-row">
-                        <h6>Retorno Mensal:</h6>
-                        <p>
-                          Valor adicional gerado mensalmente com a melhoria da
-                          conversão, representando o ganho obtido com o sistema.
-                        </p>
-                      </div>
-                      <div class="info-row">
-                        <h6>Payback:</h6>
-                        <p>
-                          Tempo estimado para recuperar o investimento inicial
-                          feito no sistema, considerando o ganho mensal gerado.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="content-title-r">
-                <h1>Com sistema</h1>
-              </div>
+            <div class="ipt-row">
+              <label title="Gasto em Reais Médio: Gasto Total / Clientes."><b>Gasto médio por cliente (R$):</b></label>
+              <input type="number" id="ipt_ticket" placeholder="Exp: 150.00" />
+            </div>
 
-              <div class="ipt-row-resultado" id="resultadoCom"></div>
+            <div class="ipt-row">
+              <label title="Dias que seu mercado fica aberto no mês."><b>Dias por mês:</b></label>
+              <input type="number" id="ipt_dias" placeholder="Exp: 28" />
+            </div>
+
+            <div class="ipt-row">
+              <label title="Conversão de compra: Total de clientes / Total de clientes que compram algo."><b>Conversão (%):</b></label>
+              <input type="number" id="ipt_taxa" value="70" />
+            </div>
+
+            <div class="ipt-row-button">
+              <button onclick="calcular()">Calcular</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEM SISTEMA -->
+        <div class="content-resultado-sem-sistema">
+          <div class="content-left">
+            <div class="content-title-r">
+              <h1>Sem sistema</h1>
+            </div>
+            <div class="ipt-row-resultado" id="resultadoSem">
+
+            </div>
+          </div>
+        </div>
+        <div class="content-resultado-com-sistema">
+          <!--COM SISTEMA -->
+          <div class="content-right">
+            <div class="content-title-r">
+              <h1>Com sistema</h1>
+            </div>
+            <div class="ipt-row-resultado" id="resultadoCom">
+
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script>
-      /*placeholders baseados em médias:*/
+  <script>
+    /*placeholders baseados em médias:*/
 
-      /*criação de váriavies que conectam o JS com o HTML*/
-      const tamanho = document.getElementById("ipt_tamanho");
-      const clientes = document.getElementById("ipt_clientes");
-      const ticket = document.getElementById("ipt_ticket");
-      const dias = document.getElementById("ipt_dias");
+    /*criação de váriavies que conectam o JS com o HTML*/
+    const tamanho = document.getElementById("ipt_tamanho");
+    const clientes = document.getElementById("ipt_clientes");
+    const ticket = document.getElementById("ipt_ticket");
+    const dias = document.getElementById("ipt_dias");
 
-      /*função de flexa(arrow), que verifica se o select de default está clicado, se não 
-        tem sugestão de valores baseados em cada tipo de select do 1 ao 3*/
-      tamanho.addEventListener("change", () => {
-        const valor = tamanho.value;
+    /*função de flexa(arrow), que verifica se o select de default está clicado, se não 
+      tem sugestão de valores baseados em cada tipo de select do 1 ao 3*/
+    tamanho.addEventListener("change", () => {
+      const valor = tamanho.value;
 
-        if (valor === "default") {
-          clientes.placeholder = "Exp: 20";
-          ticket.placeholder = "Exp: 150.00";
-          dias.placeholder = "Exp: 28";
-          return;
-        }
+      if (valor === "default") {
+        clientes.placeholder = "Exp: 20";
+        ticket.placeholder = "Exp: 150.00";
+        dias.placeholder = "Exp: 28";
+        return;
+      }
 
-        const sugestoes = {
-          1: {
-            clientes: "Média: 100 a 300",
-            ticket: "Média: 20 a 50",
-            dias: "Média: 26 a 30",
-          },
-          2: {
-            clientes: "Média: 500 a 1500",
-            ticket: "Média: 40 a 100",
-            dias: "Média: 28 a 30",
-          },
-          3: {
-            clientes: "Média: 2000+",
-            ticket: "Média: 80 a 200",
-            dias: "Média: 30",
-          },
-        };
+      const sugestoes = {
+        1: {
+          clientes: "Média: 100 a 300",
+          ticket: "Média: 20 a 50",
+          dias: "Média: 26 a 30",
+        },
+        2: {
+          clientes: "Média: 500 a 1500",
+          ticket: "Média: 40 a 100",
+          dias: "Média: 28 a 30",
+        },
+        3: {
+          clientes: "Média: 2000+",
+          ticket: "Média: 80 a 200",
+          dias: "Média: 30",
+        },
+      };
 
-        /*alocação dos valores*/
-        clientes.placeholder = sugestoes[valor].clientes;
-        ticket.placeholder = sugestoes[valor].ticket;
-        dias.placeholder = sugestoes[valor].dias;
-      });
+      /*alocação dos valores*/
+      clientes.placeholder = sugestoes[valor].clientes;
+      ticket.placeholder = sugestoes[valor].ticket;
+      dias.placeholder = sugestoes[valor].dias;
+    });
 
-      function calcular() {
-        let clientes = Number(ipt_clientes.value);
-        let ticket = Number(ipt_ticket.value);
-        let dias = Number(ipt_dias.value);
-        let conversaoAtual = Number(ipt_taxa.value);
+    function calcular() {
+      let clientes = Number(ipt_clientes.value);
+      let ticket = Number(ipt_ticket.value);
+      let dias = Number(ipt_dias.value);
+      let conversaoAtual = Number(ipt_taxa.value);
 
-        let tamanho = Number(ipt_tamanho.value);
+      let tamanho = Number(ipt_tamanho.value);
 
-        let sensores;
-        let arduinos;
-        let jumpers;
-        let comissao = 0;
+      let sensores;
+      let arduinos;
+      let jumpers;
+      let comissao = 0;
 
-        // DEFINIÇÃO REAL POR PORTE
-        if (tamanho == 1) {
-          //  Mercado pequeno
-          sensores = 3;
-          arduinos = 1;
-          jumpers = 15;
+      // DEFINIÇÃO REAL POR PORTE
+      if (tamanho == 1) {
+        //  Mercado pequeno
+        sensores = 3;
+        arduinos = 1;
+        jumpers = 15;
 
-          comissao = 20;
-        } else if (tamanho == 2) {
-          //  Supermercado médio
-          sensores = 8;
-          arduinos = 2;
-          jumpers = 40;
+        comissao = 20;
+      } else if (tamanho == 2) {
+        //  Supermercado médio
+        sensores = 8;
+        arduinos = 2;
+        jumpers = 40;
 
-          comissao = 22;
-        } else {
-          //  Hipermercado grande
-          sensores = 25;
-          arduinos = 5;
-          jumpers = 120;
+        comissao = 22;
+      } else {
+        //  Hipermercado grande
+        sensores = 25;
+        arduinos = 5;
+        jumpers = 120;
 
-          comissao = 25;
-        }
+        comissao = 25;
+      }
 
-        let custoSistema =
-          (sensores * 55 + arduinos * 260 + jumpers * 2.5) * comissao;
+      let custoSistema =
+        (sensores * 55 + arduinos * 260 + jumpers * 2.5) * comissao;
 
-        // MELHORIA
-        let novaConversao = conversaoAtual + (100 - conversaoAtual) * 0.25;
-        if (novaConversao > 100) novaConversao = 100;
+      // MELHORIA
+      let novaConversao = conversaoAtual + (100 - conversaoAtual) * 0.25;
+      if (novaConversao > 100) novaConversao = 100;
 
-        // RECEITAS
-        let receitaMax = clientes * ticket * dias;
-        let receitaAtual = receitaMax * (conversaoAtual / 100);
-        let receitaNova = receitaMax * (novaConversao / 100);
+      // RECEITAS
+      let receitaMax = clientes * ticket * dias;
+      let receitaAtual = receitaMax * (conversaoAtual / 100);
+      let receitaNova = receitaMax * (novaConversao / 100);
 
-        // PERDAS E GANHOS
-        let perdaMes = receitaMax - receitaAtual;
-        let perdaAno = perdaMes * 12;
+      // PERDAS E GANHOS
+      let perdaMes = receitaMax - receitaAtual;
+      let perdaAno = perdaMes * 12;
 
-        let ganho = receitaNova - receitaAtual;
-        let ganhoAno = ganho * 12;
+      let ganho = receitaNova - receitaAtual;
+      let ganhoAno = ganho * 12;
 
-        let payback = ganho > 0 ? custoSistema / ganho : 0;
+      let payback = ganho > 0 ? custoSistema / ganho : 0;
 
-        // SEM SISTEMA
-        resultadoSem.innerHTML = `
+      // SEM SISTEMA
+      resultadoSem.innerHTML = `
 
         <div class="res-content">
             <div class="res-left">
                 <h2>Visão Geral</h2> <br>
-                <p>
+                <p title="Taxa de Conversão Atual: Total de clientes / Total de clientes que compram algo.">
                     Conversão: <b>${conversaoAtual.toFixed(2)}%</b><br><br>
+                </p>
+                <p title="Clientes que frequentam seu mercado por dia.">
                     Clientes: <b>${clientes}</b><br><br>
+                </p>
+                <p title="Gasto em Reais Médio: Gasto Total / Clientes.">
                     Ticket: <b>R$${ticket.toFixed(2)}</b><br><br>
-                    Receita: <b>R$${receitaAtual.toFixed(2)}</b>
+                </p>
+                <p title="Total de dinheiro recebido no mês.">
+                    Receita: <b>R$${receitaAtual.toFixed(2)}</b>  
                 </p>
             </div>
 
             <div class="res-right">
                 <h2>Perdas</h2> <br>
                 
-                    Mensal:<br>
+                    <p title="Perda de receita MENSAL baseada na Conversão de Venda (${conversaoAtual}%)">
+                        Mensal:<br>
                     
-                     <span style="color:red;">
-                        <b>R$${perdaMes.toFixed(2)}</b><br>
-                    </span><br>
+                      <span style="color:red;" title="Perda de receita no mês baseada na Conversão de Venda (${conversaoAtual})">
+                          <b>R$${perdaMes.toFixed(2)}</b><br>
+                      </span><br>
+                    </p>
 
-                    Anual:<br>
-                    <span style="color:red;">
-                        <b>R$${perdaAno.toFixed(2)}</b><br><br>
-                    </span>
-                    Investimento total:<br>
-                   <b> ${custoSistema.toFixed(2)} </b>
-                
+                    <p title="Perda de receita ANUAL baseada na Conversão de Venda (${conversaoAtual}%)">
+                      Anual:<br>
 
-                </p>
+                      <span style="color:red;">
+                          <b>R$${perdaAno.toFixed(2)}</b><br><br>
+                      </span>
+                    </p>
+
+                    <p title="Investimento para instalação do projeto">
+                      Investimento total:<br>
+
+                      <b> ${custoSistema.toFixed(2)} </b>
+                    </p>
             </div>
         </div>
     `;
 
-        // COM SISTEMA
-        if (payback < 1) {
-          payback = payback * 30;
+      // COM SISTEMA
+      if (payback < 1) {
+        payback = payback * 30;
 
-          resultadoCom.innerHTML = `
+        resultadoCom.innerHTML = `
 
                     <div class="res-content">
-                        <div class="res-left">
+                        <div class="res-left-2">
                             <h2>Impacto</h2> <br>
-                            <p>
-                                Nova conversão:<br>
-                                <b>${novaConversao.toFixed(2)}%</b><br><br>
+                              <p title="Taxa de Conversão Pós Implementação do projeto: Total de clientes / Total de clientes que compram algo.">
+                                  Nova conversão:<br>
+                                  <b>${novaConversao.toFixed(2)}%</b><br><br>
+                              </p>
 
-                                Nova receita:<br>
-                                <b>R$${receitaNova.toFixed(2)}</b>
-                            </p>
+                              <p title="Total de dinheiro recebido no mês pós ganho com nova conversão (${novaConversao}%)">
+                                  Nova receita:<br>
+                                  <b>R$${receitaNova.toFixed(2)}</b>
+                              </p>
                         </div>
 
-                        <div class="res-right">
+                        <div class="res-right-2">
                             <h2>Retorno</h2> <br>
-                            <p>
-                                Mensal:<br>
-                                <span style="color:green;">
-                                    <b>R$${ganho.toFixed(2)}</b>
-                                </span><br><br>
+                            <p title="Ganho Após a implementação do projeto.">
+                              Mensal:<br>
+                              <span style="color:green;">
+                                  <b>R$${ganho.toFixed(2)}</b>
+                              </span><br><br>
+                            </p>
 
-                                Anual:<br>
-                                <span style="color:green;">
-                                    <b>R$${ganhoAno.toFixed(2)}</b>
-                                </span><br><br>
-
-                                Payback:<br>
-                                <b>Em ${Math.ceil(payback)} dias.
+                            <p title="Ganho ANUAL pós a implementação do projeto.">
+                              Anual:<br>
+                              <span style="color:green;">
+                                  <b>R$${ganhoAno.toFixed(2)}</b>
+                              </span><br><br>
+                            </p>
+                            <p title="Enquanto tempo o seu mercado demora para pagar o custo do projeto">
+                              Payback:<br>
+                              <b>Em ${Math.ceil(payback)} dias.
                             </p>
                         </div>
                     </div>
                  `;
-        } else {
-          resultadoCom.innerHTML = `
+      } else {
+        resultadoCom.innerHTML = `
 
                     <div class="res-content">
-                        <div class="res-left">
+                        <div class="res-left-2">
                             <h2>Impacto</h2> <br>
-                            <p>
+                            <p title="Taxa de Conversão Pós Implementação do projeto: Total de clientes / Total de clientes que compram algo.">
                                 Nova conversão:<br>
                                 <b>${novaConversao.toFixed(2)}%</b><br><br>
+                            </p>
 
+                            <p title="Total de dinheiro recebido no mês pós ganho com nova conversão (${novaConversao}%)">
                                 Nova receita:<br>
                                 <b>R$${receitaNova.toFixed(2)}</b>
                             </p>
                         </div>
 
-                        <div class="res-right">
+                        <div class="res-right-2">
                             <h2>Retorno</h2> <br>
-                            <p>
+                            <p title="Ganho Após a implementação do projeto.">
                                 Mensal:<br>
                                 <span style="color:green;">
                                     <b>R$${ganho.toFixed(2)}</b>
                                 </span><br><br>
+                            </p>
 
+                            <p title="Ganho ANUAL pós a implementação do projeto.">
                                 Anual:<br>
                                 <span style="color:green;">
                                     <b>R$${ganhoAno.toFixed(2)}</b>
                                 </span><br><br>
+                            </p>    
 
+                            <p title="Enquanto tempo o seu mercado demora para pagar o custo do projeto">
                                 Payback:<br>
                                 <b>Em ${payback.toFixed(1)} meses.
                             </p>
                         </div>
                     </div>
                  `;
-        }
-
-        /*if de confirmação de preenchimento dos campos:*/
-
-        if (
-          clientes == "0" ||
-          dias == "0" ||
-          ticket == "0" ||
-          tamanho == "Default"
-        ) {
-          alert("Preecnha todos os campos corretamente!");
-          resultadoSem.innerHTML = ``;
-          resultadoCom.innerHTML = ``;
-        }
       }
-    </script>
-  </body>
+
+      /*if de confirmação de preenchimento dos campos:*/
+
+      if (
+        clientes == "0" ||
+        dias == "0" ||
+        ticket == "0" ||
+        tamanho == "Default"
+      ) {
+        alert("Preencha todos os campos corretamente!");
+        resultadoSem.innerHTML = ``;
+        resultadoCom.innerHTML = ``;
+      }
+    }
+  </script>
+</body>
+
 </html>
 
 <script src="./assets/js/script.js"></script>
