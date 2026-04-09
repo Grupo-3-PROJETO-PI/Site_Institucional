@@ -379,3 +379,27 @@
 .box-projeto-right img{
   height: 70%;
 }
+
+/* Section Diagrama */
+
+.content-diagrama {
+  display: flex;
+  align-items: center;
+  background-color: rgb(190, 190, 190);
+  justify-content: space-around;
+  width: 100%;
+  min-height: 70vh;
+  margin-top: 10%;
+}
+
+.container-diagrama {
+  margin-bottom: 10%;
+}
+
+/* Section Contato */
+
+.content-contato {
+  display: flex;
+  align-items: center;
+  background-image: url(../midia/img-fundo.png);
+}
