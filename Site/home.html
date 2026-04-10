@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./assets/midia/logo.png" />
     <link rel="stylesheet" href="./assets/styles/home.css" />
     <title>©2026 FlowTrak - Home</title>
@@ -14,39 +14,40 @@
 
 <body>
     <header>
-      <div class="navbar">
-        <div class="nav-logo">
-          <h1>Flow <span>Trak</span></h1>
-          <img src="./assets/midia/logo.png" alt="" />
+        <div class="navbar">
+            <div class="nav-logo">
+                <h1>Flow <span>Trak</span></h1>
+                <img src="./assets/midia/logo.png" alt="" />
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li class="select">
+                        <a href="./home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./sobre_nos.html">Sobre Nós</a>
+                    </li>
+                    <li>
+                        <a href="./contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-login">
+                <i class="fa-solid fa-circle-user"></i>
+                <button onclick="redirecionamento_login()">Entrar</button>
+            </div>
         </div>
-        <div class="nav-links">
-          <ul>
-            <li class="select">
-                <a href="./home.html">Home</a>
-            </li>
-            <li>
-                <a href="./sobre_nos.html">Sobre Nós</a>
-            </li>
-            <li>
-                <a href="./contato.html">Contato</a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-login">
-          <i class="fa-solid fa-circle-user"></i>
-          <button onclick="redirecionamento_login()">Entrar</button>
-        </div>
-      </div>
     </header>
 
     <main>
-      <div class="container-home">
-          <div class="title-home">
-            <h2>Transforme filas em oportunidades</h2>
-            <p>Otimize o fluxo. <span>Aumente suas vendas.</span> Ofereça a experiência que seus clientes esperam.</p>
-            <button onclick="redirecionamento_simulador()">Simule</button>
-          </div>
-      </div>
+        <div class="container-home">
+            <div class="title-home">
+                <h2>Transforme filas em oportunidades</h2>
+                <p>Otimize o fluxo. <span>Aumente suas vendas.</span> Ofereça a experiência que seus clientes esperam.
+                </p>
+                <button onclick="redirecionamento_simulador()">Simule</button>
+            </div>
+        </div>
     </main>
 
     <section class="container-valores">
@@ -61,7 +62,9 @@
                 </div>
                 <div class="box-text">
                     <p>
-                        Garantir eficiência operacional e melhor experiência de compra por meio do monitoramento inteligente do fluxo de clientes, utilizando análise de dados para reduzir filas, otimizar recursos e apoiar decisões estratégicas.
+                        Garantir eficiência operacional e melhor experiência de compra por meio do monitoramento
+                        inteligente do fluxo de clientes, utilizando análise de dados para reduzir filas, otimizar
+                        recursos e apoiar decisões estratégicas.
                     </p>
                 </div>
             </div>
@@ -72,7 +75,9 @@
                 </div>
                 <div class="box-text">
                     <p>
-                      Desenvolver uma solução tecnológica que coleta e analisa dados de movimentação no supermercado, permitindo identificar padrões de comportamento, horários de pico e oportunidades de melhoria na organização e nos processos internos.
+                        Desenvolver uma solução tecnológica que coleta e analisa dados de movimentação no supermercado,
+                        permitindo identificar padrões de comportamento, horários de pico e oportunidades de melhoria na
+                        organização e nos processos internos.
                     </p>
                 </div>
             </div>
@@ -83,7 +88,9 @@
                 </div>
                 <div class="box-text">
                     <p>
-                      O alto fluxo de clientes em supermercados pode gerar filas, desorganização e perda de vendas, enquanto a falta de dados dificulta decisões eficientes. A solução propõe transformar dados em insights estratégicos para melhorar a operação.
+                        O alto fluxo de clientes em supermercados pode gerar filas, desorganização e perda de vendas,
+                        enquanto a falta de dados dificulta decisões eficientes. A solução propõe transformar dados em
+                        insights estratégicos para melhorar a operação.
                     </p>
                 </div>
             </div>
@@ -105,9 +112,20 @@
                         Como funciona?
                     </h1>
                     <p>
-                      O sistema proposto utiliza o sensor de Bloqueio como principal mecanismo de captura de dados de fluxo. Esse sensor opera de forma que ao ser interrompido pela passagem de uma pessoa, gera um sinal digital imediato, permitindo a detecção precisa de eventos de entrada e saída.
-                      Essa integração garante não apenas a contagem de pessoas, mas também a análise contínua do comportamento de fluxo dentro do ambiente. Os sensores são estrategicamente posicionados em locais-chave, como entradas, saídas, caixas e corredores, permitindo uma visão abrangente da movimentação dos clientes. Com isso, o sistema consegue identificar padrões de circulação, horários de pico e formação de filas, fornecendo informações essenciais para a gestão operacional e tomada de decisão.
-                      Além de sua eficiência, o sensor de bloqueio destaca-se pelo baixo custo, fácil implementação e alta confiabilidade, tornando-se uma solução viável para ambientes comerciais de grande circulação. Seu uso é fundamental para garantir a precisão dos dados coletados, que servirão de base para análises inteligentes, otimização de processos e aumento do desempenho do estabelecimento.
+                        O sistema proposto utiliza o sensor de Bloqueio como principal mecanismo de captura de dados de
+                        fluxo. Esse sensor opera de forma que ao ser interrompido pela passagem de uma pessoa, gera um
+                        sinal digital imediato, permitindo a detecção precisa de eventos de entrada e saída.
+                        Essa integração garante não apenas a contagem de pessoas, mas também a análise contínua do
+                        comportamento de fluxo dentro do ambiente. Os sensores são estrategicamente posicionados em
+                        locais-chave, como entradas, saídas, caixas e corredores, permitindo uma visão abrangente da
+                        movimentação dos clientes. Com isso, o sistema consegue identificar padrões de circulação,
+                        horários de pico e formação de filas, fornecendo informações essenciais para a gestão
+                        operacional e tomada de decisão.
+                        Além de sua eficiência, o sensor de bloqueio destaca-se pelo baixo custo, fácil implementação e
+                        alta confiabilidade, tornando-se uma solução viável para ambientes comerciais de grande
+                        circulação. Seu uso é fundamental para garantir a precisão dos dados coletados, que servirão de
+                        base para análises inteligentes, otimização de processos e aumento do desempenho do
+                        estabelecimento.
                     </p>
                 </div>
                 <div class="box-projeto-right">
@@ -117,26 +135,175 @@
         </div>
     </section>
 
-    <section class="container-diagrama">
-        <div class="title-valores">
-            <span>Diagrama</span>
+    <section>
+        <div class="container-diagrama">
+            <div class="title-diagrama">
+                <span>Diagrama de Visão de Negócio</span>
+            </div>
+            <div class="content-diagrama">
+                <div class="diagrama">
+                    <img src="./assets/midia/diagrama_visao_negocio.jpeg" alt="">
+                </div>
+            </div>
         </div>
-        <div class="content-diagrama">
-            <canvas id="diagrama">
-            </canvas>
-        </div>
-
     </section>
 
-    <section class="container-contato"></section>
-        <div class="title-valores">
-            <span>Contato</span>
+    <section>
+        <div class="container-contato">
+            <div class="title-contato">
+                <span>Contato</span>
+            </div>
+            <div class="content-contato">
+                <div class="title-content-contato">
+                    <h1>
+                        Gostou do Nosso Projeto?
+                    </h1>
+                </div>
+                <div class="box-contato">
+                    <p>
+                        Leve essa solução para o seu negócio!<br>
+                        Fale com a gente agora e descubra como começar
+                    </p>
+                    <button onclick="redirecionamento_contato()">Contate-nos</button>
+                </div>
+            </div>
         </div>
-        <div class="content-contato">
-            <h1>Gostou do nosso projeto?</h1>
-            <h2>Fale conosco!</h2>
+    </section>
+
+    <section>
+        <div class="container-simulador">
+            <div class="container-title">
+                <span>Simulador Financeiro</span>
+            </div>
+            <div class="content-s">
+                <div class="box-simulador">
+                    <div class="content-title">
+                        <div class="content-title-text">
+                            <h1>Simulação</h1>
+                        </div>
+                    </div>
+
+                    <div class="content-ipt">
+                        <div class="ipt-row">
+                            <label title="Porte do seu supermercado em Metros."><b>Tamanho do Supermercado:</b></label>
+                            <select id="ipt_tamanho">
+                                <option value="default">Selecione:</option>
+                                <option value="1">Mercado (até 300m²)</option>
+                                <option value="2">Supermercado (300m² - 5000m²)</option>
+                                <option value="3">Hipermercado (+5000m²)</option>
+                            </select>
+                        </div>
+                        <!-- 500 a 1.500 clientes diariamente. -->
+                        <div class="ipt-row">
+                            <label title="Clientes que frequentam seu mercado por dia."><b>Clientes por Dia:</b></label>
+                            <input type="number" id="ipt_clientes" placeholder="Exp: 20" />
+                        </div>
+
+                        <div class="ipt-row">
+                            <label title="Gasto em Reais Médio: Gasto Total / Clientes."><b>Gasto médio por cliente
+                                    (R$):</b></label>
+                            <input type="number" id="ipt_ticket" placeholder="Exp: 150.00" />
+                        </div>
+
+                        <div class="ipt-row">
+                            <label title="Dias que seu mercado fica aberto no mês."><b>Dias por mês:</b></label>
+                            <input type="number" id="ipt_dias" placeholder="Exp: 28" />
+                        </div>
+
+                        <div class="ipt-row">
+                            <label
+                                title="Conversão de compra: Total de clientes / Total de clientes que compram algo."><b>Conversão
+                                    (%):</b></label>
+                            <input type="number" id="ipt_taxa" value="70" />
+                        </div>
+
+                        <div class="ipt-row-button">
+                            <button onclick="calcular()">Calcular</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEM SISTEMA -->
+                <div class="content-resultado-sem-sistema">
+                    <div class="content-left">
+                        <div class="content-title-r">
+                            <h1>Sem sistema</h1>
+                        </div>
+                        <div class="ipt-row-resultado" id="resultadoSem">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="content-resultado-com-sistema">
+                    <!--COM SISTEMA -->
+                    <div class="content-right">
+                        <div class="content-title-r">
+                            <h1>Com sistema</h1>
+                        </div>
+                        <div class="ipt-row-resultado" id="resultadoCom">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <footer>
+        <div class="container-footer">
+            <div class="content-footer">
+                <div class="content-footer-left">
+                    <div class="footer-left-title">
+                        <h1>FlowTrak</h1>
+                        <p>
+                            Controle inteligente de fluxo em supermercados com sensores e automação
+                        </p>
+                    </div>
+                    <div class="footer-left-links">
+                        <div class="links-telefone">
+                            <i class="fa-solid fa-phone"></i>
+                            <p>+55 11 93955-4660</p>
+                        </div>
+                        <div class="links-email">
+                            <i class="fa-regular fa-envelope"></i>
+                            <p>flowtrak@hotmail.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-footer-right">
+                    <div class="footer-box">
+                        <ul>
+                            <li class="footer-select">Home</li>
+                            <li>Valores</li>
+                            <li>Nosso Projeto</li>
+                            <li>Diagrama</li>
+                            <li>Simulador</li>
+                        </ul>
+                    </div>
+                    <div class="footer-box">
+                        <ul>
+                            <li>Sobre Nós</li>
+                            <li>Resumo</li>
+                            <li>Objetivo</li>
+                            <li>Nosso Time</li>
+                        </ul>
+                    </div>
+                    <div class="footer-box">
+                        <ul>
+                            <li>Contato</li>
+                            <li>Instagram</li>
+                            <li>Twiter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="divisao-footer">
+                <h3>© 2026 FlowTrak</h3>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
 
 <script src="./assets/js/script.js"></script>
