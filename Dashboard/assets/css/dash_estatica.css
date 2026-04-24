@@ -4,17 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --cor01: #8C3503;
-  --cor02: #d98927;
-  --cor03: #bf6a02;
-  --cor04: #26471b;
-  --cor05: #fff;
+    --cor01: #8C3503;
+    --cor02: #d98927;
+    --cor03: #bf6a02;
+    --cor04: #26471b;
+    --cor05: #fff;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
 }
 
 /*header*/
@@ -131,7 +131,7 @@
     border: none;
 }
 
-.divisao-nav{
+.divisao-nav {
     height: 10vh;
     width: 100%;
 }
@@ -155,7 +155,7 @@
     height: 10%;
 }
 
-.container-geral-titulo i{
+.container-geral-titulo i {
     font-size: 1.6rem;
     padding: 0.5rem;
     border-radius: 0.6rem;
@@ -164,7 +164,7 @@
     transition: 0.3s;
 }
 
-.container-geral-titulo i:hover{
+.container-geral-titulo i:hover {
     background-color: #26471b;
     color: white;
 }
@@ -206,15 +206,15 @@
     background-color: #00000007;
 }
 
-#alerta{
+#alerta {
     border: 2px solid rgba(255, 0, 0, 0.4);
 }
 
-#potencial{
+#potencial {
     border: 2px solid rgba(179, 179, 58, 0.4);
 }
 
-#normal{
+#normal {
     border: 2px solid rgba(0, 128, 0, 0.4);
 }
 
@@ -222,10 +222,23 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
     width: 95%;
     height: 70%;
     background-color: #00000007;
     border-radius: 0.5rem;
+}
+
+.geral-left-grafico i {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+
+    font-size: 1.6rem;
+    color: var(--cor01);
+
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .geral-right-titulo {
@@ -236,7 +249,7 @@
     width: 80%;
 }
 
-.geral-kpis-right{
+.geral-kpis-right {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,7 +259,7 @@
     padding-left: 2.4%;
 }
 
-.geral-kpis-right .box-kpis{
+.geral-kpis-right .box-kpis {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,10 +276,24 @@
     justify-content: space-around;
 
     position: relative;
-    width: 60%;
+    width: 70%;
     height: 70%;
     background-color: #00000007;
     border-radius: 0.5rem;
+
+    padding: 0rem 2rem;
+}
+
+.geral-right-grafico i {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+
+    font-size: 1.6rem;
+    color: var(--cor01);
+
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .geral-right-grafico img {

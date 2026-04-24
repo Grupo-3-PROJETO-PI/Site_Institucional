@@ -73,6 +73,7 @@
                         </div>
                     </div>
                     <div class="geral-left-grafico">
+                        <i class="fa-solid fa-circle-info"></i>
                         <canvas id="grafico_linha_fluxo" style="height: 75%; max-width: 90%;"></canvas>
                     </div>
                 </div>
@@ -92,8 +93,9 @@
                         </div>
                     </div>
                     <div class="geral-right-grafico">
-                        <img src="./assets/images/planta_loja.png" alt="">
-                        <canvas id="grafico_mapa_calor_fluxo" style="height: 75%; max-width: 85%;"></canvas>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <img src="" alt="">
+                        <canvas id="grafico_mapa_calor_fluxo" style="height: 85%; max-width: 92%;"></canvas>
                     </div>
                 </div>
             </div>
@@ -128,9 +130,9 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Título do Meu Gráfico', // Texto do título
+                    text: 'Gráfico de Linha: Intensidade do Fluxo / Horário',
                     font: {
-                        size: 20 // Tamanho da fonte
+                        size: 20
                     },
                 }
             },
@@ -209,9 +211,9 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Título do Meu Gráfico', // Texto do título
+                    text: 'Gráfico Mapa de Calor: Intensidade do Fluxo / Local',
                     font: {
-                        size: 20 // Tamanho da fonte
+                        size: 20
                     },
                 },
                 legend: {
