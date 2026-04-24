@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../Site/assets/midia/logo.png" />
     <link rel="stylesheet" href="./assets/css/dash_estatica.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./assets/js/dash.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>©2026 FlowTrak - Dash Geral</title>
 </head>
@@ -40,13 +44,14 @@
     </header>
 
     <div class="divisao-nav">
-        
+
     </div>
 
     <main>
         <div class="container-geral">
             <div class="container-geral-titulo">
-                <h1>Fluxo de Clientes: Díario (17/03/2026)</h1>
+                <h1>Fluxo de Clientes Díario: (xx/mm/yyyy)</h1>
+                <i class="fa-solid fa-sliders"></i>
             </div>
             <div class="content-geral">
                 <div class="content-geral-left">
@@ -72,8 +77,19 @@
                     </div>
                 </div>
                 <div class="content-geral-right">
-                    <div class="geral-right-titulo">
-                        <h1>Mapa de calor: areas de maior movimento | Díario (17/03/2026)</h1>
+                    <div class="geral-kpis">
+                        <div class="geral-kpis-right">
+                            <div class="box-kpis" id="alerta">
+                                <div class="box-kpis-row"></div>
+                                <div class="box-kpis-row"></div>
+                                <div class="box-kpis-row"></div>
+                            </div>
+                            <div class="box-kpis" id="potencial">
+                                <div class="box-kpis-row"></div>
+                                <div class="box-kpis-row"></div>
+                                <div class="box-kpis-row"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="geral-right-grafico">
                         <img src="./assets/images/planta_loja.png" alt="">
@@ -109,6 +125,15 @@
 
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Título do Meu Gráfico', // Texto do título
+                    font: {
+                        size: 20 // Tamanho da fonte
+                    },
+                }
+            },
             scales: {
                 x: {
                     title: {
@@ -182,6 +207,13 @@
         },
         options: {
             plugins: {
+                title: {
+                    display: true,
+                    text: 'Título do Meu Gráfico', // Texto do título
+                    font: {
+                        size: 20 // Tamanho da fonte
+                    },
+                },
                 legend: {
                     position: 'bottom',
                     labels: {

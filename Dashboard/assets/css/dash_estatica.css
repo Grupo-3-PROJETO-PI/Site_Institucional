@@ -150,12 +150,24 @@
 .container-geral-titulo {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    width: 88%;
+    justify-content: space-between;
+    width: 87%;
     height: 10%;
 }
 
-.container-geral-titulo h1 {}
+.container-geral-titulo i{
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container-geral-titulo i:hover{
+    background-color: #26471b;
+    color: white;
+}
 
 .content-geral {
     display: flex;
@@ -220,12 +232,29 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 10%;
+    height: 20%;
     width: 80%;
 }
 
-.geral-right-titulo h1 {
-    font-size: 1.2rem;
+.geral-kpis-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100%;
+    gap: 3vw;
+    padding-left: 2.4%;
+}
+
+.geral-kpis-right .box-kpis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+
+    border-radius: 0.6rem;
+    background-color: #00000007;
 }
 
 .geral-right-grafico {
@@ -235,7 +264,7 @@
 
     position: relative;
     width: 60%;
-    height: 80%;
+    height: 70%;
     background-color: #00000007;
     border-radius: 0.5rem;
 }
