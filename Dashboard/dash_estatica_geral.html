@@ -56,24 +56,42 @@
             <div class="content-geral">
                 <div class="content-geral-left">
                     <div class="geral-kpis">
-                        <div class="box-kpis" id="alerta">
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
+                        <div class="box-kpis" id="normal">
+                            <div class="box-kpis-row">
+                                Total de Clientes:
+                            </div>
+                            <div class="box-kpis-row-valor" id="valor-normal">
+                                20203
+                            </div>
+                            <div class="box-kpis-row">
+                                +12% vs mês passado
+                            </div>
                         </div>
                         <div class="box-kpis" id="potencial">
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
+                            <div class="box-kpis-row">
+                                Pico de Fluxo:
+                            </div>
+                            <div class="box-kpis-row-valor" id="valor-potencial">
+                                12h ás 16h
+                            </div>
+                            <div class="box-kpis-row">
+                                Nível de Intensidade: 5
+                            </div>
                         </div>
-                        <div class="box-kpis" id="normal">
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
+                        <div class="box-kpis" id="alerta">
+                            <div class="box-kpis-row">
+                                Permanencia Média:
+                            </div>
+                            <div class="box-kpis-row-valor" id="valor-alerta">
+                                19 Minutos
+                            </div>
+                            <div class="box-kpis-row">
+                                +7 min acima do ideal
+                            </div>
                         </div>
                     </div>
                     <div class="geral-left-grafico">
-                        <i class="fa-solid fa-circle-info"></i>
+                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrisão"></i>
                         <canvas id="grafico_linha_fluxo" style="height: 75%; max-width: 90%;"></canvas>
                     </div>
                 </div>
@@ -81,21 +99,33 @@
                     <div class="geral-kpis">
                         <div class="geral-kpis-right">
                             <div class="box-kpis" id="alerta">
-                                <div class="box-kpis-row"></div>
-                                <div class="box-kpis-row"></div>
-                                <div class="box-kpis-row"></div>
+                                <div class="box-kpis-row">
+                                    Mais acessado:
+                                </div>
+                                <div class="box-kpis-row-valor" id="valor-alerta">
+                                    Entrada
+                                </div>
+                                <div class="box-kpis-row">
+                                    Fluxo: Alto
+                                </div>
                             </div>
                             <div class="box-kpis" id="potencial">
-                                <div class="box-kpis-row"></div>
-                                <div class="box-kpis-row"></div>
-                                <div class="box-kpis-row"></div>
+                                <div class="box-kpis-row">
+                                    Ponto crítico:
+                                </div>
+                                <div class="box-kpis-row-valor" id="valor-potencial">
+                                    Corredor 2
+                                </div>
+                                <div class="box-kpis-row">
+                                    Baixo engajamento
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="geral-right-grafico">
-                        <i class="fa-solid fa-circle-info"></i>
+                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrisão"></i>
                         <img src="" alt="">
-                        <canvas id="grafico_mapa_calor_fluxo" style="height: 85%; max-width: 92%;"></canvas>
+                        <canvas id="grafico_mapa_calor_fluxo" style="height: 80%; max-width: 92%;"></canvas>
                     </div>
                 </div>
             </div>
@@ -130,7 +160,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Gráfico de Linha: Intensidade do Fluxo / Horário',
+                    text: 'Gráfico de Linha: Intensidade do Fluxo por Horário',
                     font: {
                         size: 20
                     },
@@ -211,7 +241,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Gráfico Mapa de Calor: Intensidade do Fluxo / Local',
+                    text: 'Gráfico Mapa de Calor: Intensidade do Fluxo do Local',
                     font: {
                         size: 20
                     },
