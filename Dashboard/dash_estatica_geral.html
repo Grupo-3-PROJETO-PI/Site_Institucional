@@ -91,7 +91,8 @@
                         </div>
                     </div>
                     <div class="geral-left-grafico">
-                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrisão"></i>
+                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrição"
+                            id="btn_grafico_linha"></i>
                         <canvas id="grafico_linha_fluxo" style="height: 75%; max-width: 90%;"></canvas>
                     </div>
                 </div>
@@ -123,12 +124,20 @@
                         </div>
                     </div>
                     <div class="geral-right-grafico">
-                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrisão"></i>
-                        <img src="" alt="">
+                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrição"
+                            id="btn_grafico_mapa_calor"></i>
+                        <!-- <img src="" alt=""> -->
                         <canvas id="grafico_mapa_calor_fluxo" style="height: 80%; max-width: 92%;"></canvas>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="container-imagem-left">
+            <h1>Gráfico Linha</h1>
+        </div>
+        <div class="container-imagem-right">
+            <h1>Gráfico Mapa de Calor</h1>
         </div>
     </main>
 </body>
@@ -280,4 +289,23 @@
             }
         }
     });
+
+    // abrindo modal
+
+    // botões
+    let btn_info_grafico_linha = document.getElementById('btn_grafico_linha');
+    let btn_info_grafico_mapa_calor = document.getElementById('btn_grafico_mapa_calor');
+
+    // containers
+
+    let_container_imagem_left = document.querySelector('.container-imagem-left');
+    let_container_imagem_right = document.querySelector('.container-imagem-right');
+
+    btn_info_grafico_linha.addEventListener('click', () => {
+        let_container_imagem_left.style.display = 'flex';
+    })
+
+    btn_info_grafico_mapa_calor.addEventListener('click', () => {
+        let_container_imagem_right.style.display = 'flex';
+    })
 </script>

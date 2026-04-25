@@ -7,6 +7,9 @@
     <link rel="icon" href="../Site/assets/midia/logo.png" />
     <link rel="stylesheet" href="./assets/css/dash_estatica.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./assets/js/dash.js"></script>
 
     <title>©2026 FlowTrak - Dash Específica</title>
@@ -40,46 +43,115 @@
     </header>
 
     <div class="divisao-nav">
-        
+
     </div>
 
     <main>
         <div class="container-geral">
             <div class="container-geral-titulo">
-                <h1>Fluxo de Clientes: Díario (17/03/2026)</h1>
+                <h1>Fluxo de Clientes Díario: (xx/mm/yyyy)</h1>
+                <i class="fa-solid fa-sliders"></i>
             </div>
             <div class="content-geral">
                 <div class="content-geral-left">
                     <div class="geral-kpis">
-                        <div class="box-kpis" id="alerta">
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
+                        <div class="box-kpis" id="normal">
+                            <div class="box-kpis-row">
+                                Total de Clientes:
+                            </div>
+                            <div class="box-kpis-row-valor" id="valor-normal">
+                                20203
+                            </div>
+                            <div class="box-kpis-row">
+                                +12% vs mês passado
+                            </div>
                         </div>
                         <div class="box-kpis" id="potencial">
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
+                            <div class="box-kpis-row">
+                                Pico de Fluxo:
+                            </div>
+                            <div class="box-kpis-row-valor" id="valor-potencial">
+                                12h ás 16h
+                            </div>
+                            <div class="box-kpis-row">
+                                Nível de Intensidade: 5
+                            </div>
                         </div>
-                        <div class="box-kpis" id="normal">
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
-                            <div class="box-kpis-row"></div>
+                        <div class="box-kpis" id="alerta">
+                            <div class="box-kpis-row">
+                                Permanencia Média:
+                            </div>
+                            <div class="box-kpis-row-valor" id="valor-alerta">
+                                19 Minutos
+                            </div>
+                            <div class="box-kpis-row">
+                                +7 min acima do ideal
+                            </div>
                         </div>
                     </div>
                     <div class="geral-left-grafico">
+                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrição"
+                            id="btn_grafico_linha"></i>
                         <canvas id="grafico_linha_fluxo" style="height: 75%; max-width: 90%;"></canvas>
                     </div>
                 </div>
                 <div class="content-geral-right">
-                    <div class="geral-right-titulo">
-                        <h1>Mapa de calor: areas de maior movimento | Díario (17/03/2026)</h1>
+                    <div class="geral-kpis">
+                        <div class="geral-kpis-right">
+                            <div class="box-kpis" id="alerta">
+                                <div class="box-kpis-row">
+                                    Mais acessado:
+                                </div>
+                                <div class="box-kpis-row-valor" id="valor-alerta">
+                                    Entrada
+                                </div>
+                                <div class="box-kpis-row">
+                                    Fluxo: Alto
+                                </div>
+                            </div>
+                            <div class="box-kpis" id="potencial">
+                                <div class="box-kpis-row">
+                                    Ponto crítico:
+                                </div>
+                                <div class="box-kpis-row-valor" id="valor-potencial">
+                                    Corredor 2
+                                </div>
+                                <div class="box-kpis-row">
+                                    Baixo engajamento
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="geral-right-grafico">
-                        <img src="./assets/images/planta_loja.png" alt="">
-                        <canvas id="grafico_mapa_calor_fluxo" style="height: 75%; max-width: 85%;"></canvas>
+                        <i class="fa-solid fa-circle-info" title="Clique para ver a descrição"
+                            id="btn_grafico_mapa_calor"></i>
+                        <!-- <img src="" alt=""> -->
+                        <canvas id="grafico_mapa_calor_fluxo" style="height: 80%; max-width: 92%;"></canvas>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container-fade">
+
+        </div>
+
+        <div class="container-imagem-left">
+            <div class="container-imagem-title">
+                <h1>Gráfico de Linha: Descrição</h1>
+                <i class="fa-solid fa-circle-xmark" id="btn_fechar_grafico_linha"></i>
+            </div>
+            <div class="content-imagem">
+                <img src="./assets/images/grafico-linha.png" alt="">
+            </div>
+        </div>
+        <div class="container-imagem-right">
+            <div class="container-imagem-title">
+                <h1>Gráfico de Mapa de Calor: Descrição</h1>
+                <i class="fa-solid fa-circle-xmark" id="btn_fechar_grafico_mapa_calor"></i>
+            </div>
+            <div class="content-imagem">
+                <img src="./assets/images/grafico-mapa.png" alt="">
             </div>
         </div>
     </main>
@@ -109,6 +181,15 @@
 
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Gráfico de Linha: Intensidade do Fluxo por Horário',
+                    font: {
+                        size: 20
+                    },
+                }
+            },
             scales: {
                 x: {
                     title: {
@@ -182,6 +263,13 @@
         },
         options: {
             plugins: {
+                title: {
+                    display: true,
+                    text: 'Gráfico Mapa de Calor: Intensidade do Fluxo do Local',
+                    font: {
+                        size: 20
+                    },
+                },
                 legend: {
                     position: 'bottom',
                     labels: {
@@ -216,4 +304,42 @@
             }
         }
     });
+
+    // abrindo modal
+
+    // botões
+    let btn_info_grafico_linha = document.getElementById('btn_grafico_linha');
+    let btn_info_grafico_mapa_calor = document.getElementById('btn_grafico_mapa_calor');
+
+    let btn_fechar_info_grafico_linha = document.getElementById('btn_fechar_grafico_linha');
+    let btn_fechar_info_grafico_mapa_calor = document.getElementById('btn_fechar_grafico_mapa_calor');
+
+    // containers
+
+    let container_imagem_left = document.querySelector('.container-imagem-left');
+    let container_imagem_right = document.querySelector('.container-imagem-right');
+    let container_fade = document.querySelector('.container-fade');
+
+    // abir content
+    btn_info_grafico_linha.addEventListener('click', () => {
+        container_fade.style.display = 'flex';
+        container_imagem_left.style.display = 'flex';
+    })
+
+    btn_info_grafico_mapa_calor.addEventListener('click', () => {
+        container_fade.style.display = 'flex';
+        container_imagem_right.style.display = 'flex';
+    })
+
+    //fechar content
+
+    btn_fechar_info_grafico_linha.addEventListener('click', () => {
+        container_fade.style.display = 'none';
+        container_imagem_left.style.display = 'none';
+    })
+
+    btn_fechar_info_grafico_mapa_calor.addEventListener('click', () => {
+        container_fade.style.display = 'none';
+        container_imagem_right.style.display = 'none';
+    })
 </script>
