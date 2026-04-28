@@ -133,6 +133,30 @@
             </div>
         </div>
 
+
+        <div class="container-fade">
+
+        </div>
+
+        <div class="container-imagem-left">
+            <div class="container-imagem-title">
+                <h1>Gráfico de Linha: Descrição</h1>
+                <i class="fa-solid fa-circle-xmark" id="btn_fechar_grafico_linha"></i>
+            </div>
+            <div class="content-imagem">
+                <img src="./assets/images/grafico-linha.png" alt="">
+            </div>
+        </div>
+        <div class="container-imagem-right">
+            <div class="container-imagem-title">
+                <h1>Gráfico de Mapa de Calor: Descrição</h1>
+                <i class="fa-solid fa-circle-xmark" id="btn_fechar_grafico_mapa_calor"></i>
+            </div>
+            <div class="content-imagem">
+                <img src="./assets/images/grafico-mapa.png" alt="">
+            </div>
+        </div>
+
         <div class="container-imagem-left">
             <h1>Gráfico Linha</h1>
         </div>
@@ -293,19 +317,38 @@
     // abrindo modal
 
     // botões
-    let btn_info_grafico_linha = document.getElementById('btn_grafico_linha');
+   let btn_info_grafico_linha = document.getElementById('btn_grafico_linha');
     let btn_info_grafico_mapa_calor = document.getElementById('btn_grafico_mapa_calor');
+
+    let btn_fechar_info_grafico_linha = document.getElementById('btn_fechar_grafico_linha');
+    let btn_fechar_info_grafico_mapa_calor = document.getElementById('btn_fechar_grafico_mapa_calor');
 
     // containers
 
-    let_container_imagem_left = document.querySelector('.container-imagem-left');
-    let_container_imagem_right = document.querySelector('.container-imagem-right');
+    let container_imagem_left = document.querySelector('.container-imagem-left');
+    let container_imagem_right = document.querySelector('.container-imagem-right');
+    let container_fade = document.querySelector('.container-fade');
 
+    // abir content
     btn_info_grafico_linha.addEventListener('click', () => {
-        let_container_imagem_left.style.display = 'flex';
+        container_fade.style.display = 'flex';
+        container_imagem_left.style.display = 'flex';
     })
 
     btn_info_grafico_mapa_calor.addEventListener('click', () => {
-        let_container_imagem_right.style.display = 'flex';
+        container_fade.style.display = 'flex';
+        container_imagem_right.style.display = 'flex';
+    })
+
+    //fechar content
+
+    btn_fechar_info_grafico_linha.addEventListener('click', () => {
+        container_fade.style.display = 'none';
+        container_imagem_left.style.display = 'none';
+    })
+
+    btn_fechar_info_grafico_mapa_calor.addEventListener('click', () => {
+        container_fade.style.display = 'none';
+        container_imagem_right.style.display = 'none';
     })
 </script>
