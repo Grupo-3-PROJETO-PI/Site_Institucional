@@ -80,4 +80,18 @@ git clone https://github.com/FlowTrak-26/site-institucional.git
 
 ---
 
+## Instituição
+
+**SPTech School — São Paulo Tech School**
+Curso: Ciência da Computação
+Disciplina: Pesquisa e Inovação
+Orientadores: Fernando Brandão e Julia Araripe
+Ano: 2026
+
+---
+
+<div align="center">
+  <sub>Desenvolvido pela FlowTrak</sub>
+</div>
+
 
