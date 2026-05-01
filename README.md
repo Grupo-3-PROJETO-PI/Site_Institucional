@@ -67,4 +67,17 @@ O site do FlowTrak é a interface central que permite aos gestores acompanharem 
 git clone https://github.com/FlowTrak-26/site-institucional.git
 ```
 
+## Equipe — Grupo 03
+
+| Nome | 
+|---|
+| Caio Picciarelli Silva | 
+| Emanuelly Cristini Alves de Melo | 
+| Isaac Azevedo Pinheiro | 
+| Karina Cupola Alves | 
+| Victor de Oliveira Souza |
+| Vitor da Luz Santos | 
+
+---
+
 
