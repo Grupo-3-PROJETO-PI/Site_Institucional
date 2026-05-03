@@ -57,13 +57,13 @@
                     <div class="geral-kpis">
                         <div class="box-kpis" id="normal">
                             <div class="box-kpis-row">
-                                Total de Clientes:
+                                Média de fluxo:
                             </div>
                             <div class="box-kpis-row-valor" id="valor-normal">
-                                20203
+                                43%
                             </div>
                             <div class="box-kpis-row">
-                                +12% vs mês passado
+                                +12% vs o dia anterior
                             </div>
                         </div>
                         <div class="box-kpis" id="potencial">
@@ -82,10 +82,10 @@
                                 Permanência Média:
                             </div>
                             <div class="box-kpis-row-valor" id="valor-alerta">
-                                19 Minutos
+                                10 Minutos
                             </div>
                             <div class="box-kpis-row">
-                                +7 min acima do ideal
+                                +8 min acima do ideal
                             </div>
                         </div>
                     </div>
@@ -98,12 +98,12 @@
                 <div class="content-geral-right">
                     <div class="geral-kpis">
                         <div class="geral-kpis-right">
-                            <div class="box-kpis" id="alerta">
+                            <div class="box-kpis" id="alerta">  
                                 <div class="box-kpis-row">
-                                    Mais acessado:
+                                    Local acessado:
                                 </div>
                                 <div class="box-kpis-row-valor" id="valor-alerta">
-                                    Entrada
+                                    Caixa
                                 </div>
                                 <div class="box-kpis-row">
                                     Fluxo: Alto
@@ -114,10 +114,10 @@
                                     Ponto crítico:
                                 </div>
                                 <div class="box-kpis-row-valor" id="valor-potencial">
-                                    Corredor 2
+                                    Filas extensas
                                 </div>
                                 <div class="box-kpis-row">
-                                    Baixo engajamento
+                                    Caixa 12
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                     <div class="geral-right-grafico">
                         <i class="fa-solid fa-circle-info" title="Clique para ver a descrição"
                             id="btn_grafico_mapa_calor"></i>
-                        <!-- <img src="" alt=""> -->
+                        <img src="./assets/images/caixas.png" alt="">
                         <canvas id="grafico_mapa_calor_fluxo" style="height: 80%; max-width: 92%;"></canvas>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                 <i class="fa-solid fa-circle-xmark" id="btn_fechar_grafico_mapa_calor"></i>
             </div>
             <div class="content-imagem">
-                <img src="./assets/images/grafico-mapa.png" alt="">
+                <img src="./assets/images/caixas.png" alt="">
             </div>
         </div>
     </main>
@@ -228,13 +228,9 @@
 
     // dados do gráfico
     const dados = [
-        { x: 8, y: 8, r: 0 },
-        { x: 1, y: 0, r: 20 },
-        { x: 2, y: 0, r: 15 },
-        { x: 2, y: 1, r: 10 },
-        { x: 4, y: 2, r: 5 },
-        { x: 7, y: 6, r: 20 }
-    ];
+        { x: 6, y: 6, r: 0},
+        { x: 3, y: 3, r: 25},
+];
 
     // gera as cores com base na intensidade
     const cores = dados.map(ponto => pegarCorPorIntensidade(ponto.r));
