@@ -11,6 +11,9 @@
 
 </div>
 
+<h2>link do site</h2>
+<pre>https://flowtrak-26.github.io/site-institucional/</pre>
+
 ## Sobre o Projeto
 
 O **FlowTrak™** é um sistema de monitoramento inteligente de fluxo de clientes em supermercados, desenvolvido como projeto de TCC no curso de **Ciência da Computação** da **SPTech School** (2026).
